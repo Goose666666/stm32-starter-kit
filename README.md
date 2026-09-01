@@ -16,7 +16,7 @@
 
 **[从 Releases 下载 STM32-starter-kit.zip](https://github.com/Goose666666/stm32-starter-kit/releases/latest)**
 
-约 99 MB，解压后里面有：
+约 67 MB，解压后里面有：
 
 | 内容 | 说明 |
 | --- | --- |
