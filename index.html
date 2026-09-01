@@ -8,93 +8,62 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=Roboto+Mono:wght@400;500&family=Source+Sans+3:wght@400;600&display=swap">
 <style>
 :root{
-  --ground:#F7FAFB;
-  --surface:#FFFFFF;
-  --surface-2:#EDF2F5;
-  --ink:#0C1A24;
-  --ink-2:#4C5D69;
-  --ink-3:#7A8894;
-  --rule:#DBE3E8;
-  --rule-strong:#BAC6CE;
-  --accent:#0E6FA8;
-  --accent-soft:#E2EEF6;
-  --warn:#A3441C;
-  --warn-soft:#F8EBE4;
-  --ok:#226B47;
-  --ok-soft:#E3F0E9;
+  --ground:#F7FAFB; --surface:#FFFFFF; --surface-2:#EDF2F5;
+  --ink:#0C1A24; --ink-2:#4C5D69; --ink-3:#7A8894;
+  --rule:#DBE3E8; --rule-strong:#BAC6CE;
+  --accent:#0E6FA8; --accent-soft:#E2EEF6;
+  --warn:#A3441C; --warn-soft:#F8EBE4;
+  --ok:#226B47; --ok-soft:#E3F0E9;
+  --stop:#8E2F2F; --stop-soft:#F7E6E6;
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
-    --ground:#0F1519;
-    --surface:#161D22;
-    --surface-2:#1E262C;
-    --ink:#E5EBEF;
-    --ink-2:#93A2AC;
-    --ink-3:#74828C;
-    --rule:#252E34;
-    --rule-strong:#39454D;
-    --accent:#55A9DC;
-    --accent-soft:#132B39;
-    --warn:#D2865A;
-    --warn-soft:#2B1E16;
-    --ok:#63A583;
-    --ok-soft:#16251D;
+    --ground:#0F1519; --surface:#161D22; --surface-2:#1E262C;
+    --ink:#E5EBEF; --ink-2:#93A2AC; --ink-3:#74828C;
+    --rule:#252E34; --rule-strong:#39454D;
+    --accent:#55A9DC; --accent-soft:#132B39;
+    --warn:#D2865A; --warn-soft:#2B1E16;
+    --ok:#63A583; --ok-soft:#16251D;
+    --stop:#E08585; --stop-soft:#2E1A1A;
   }
 }
 :root[data-theme="dark"]{
-  --ground:#0F1519;
-  --surface:#161D22;
-  --surface-2:#1E262C;
-  --ink:#E5EBEF;
-  --ink-2:#93A2AC;
-  --ink-3:#74828C;
-  --rule:#252E34;
-  --rule-strong:#39454D;
-  --accent:#55A9DC;
-  --accent-soft:#132B39;
-  --warn:#D2865A;
-  --warn-soft:#2B1E16;
-  --ok:#63A583;
-  --ok-soft:#16251D;
+  --ground:#0F1519; --surface:#161D22; --surface-2:#1E262C;
+  --ink:#E5EBEF; --ink-2:#93A2AC; --ink-3:#74828C;
+  --rule:#252E34; --rule-strong:#39454D;
+  --accent:#55A9DC; --accent-soft:#132B39;
+  --warn:#D2865A; --warn-soft:#2B1E16;
+  --ok:#63A583; --ok-soft:#16251D;
+  --stop:#E08585; --stop-soft:#2E1A1A;
 }
 
 *{box-sizing:border-box}
-body{
-  background:var(--ground);
-  color:var(--ink);
+body{background:var(--ground);color:var(--ink);
   font-family:"Source Sans 3","PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
-  font-size:15.5px;
-  line-height:1.75;
-  -webkit-font-smoothing:antialiased;
-}
+  font-size:15.5px;line-height:1.75;-webkit-font-smoothing:antialiased}
 .wrap{max-width:820px;margin:0 auto;padding:48px 24px 90px}
-h1,h2,h3{
-  font-family:Archivo,"PingFang SC","Microsoft YaHei",sans-serif;
-  font-weight:700;margin:0;line-height:1.25;text-wrap:balance;
-}
+h1,h2,h3{font-family:Archivo,"PingFang SC","Microsoft YaHei",sans-serif;
+  font-weight:700;margin:0;line-height:1.25;text-wrap:balance}
 p{margin:0}
-code{
-  font-family:"Roboto Mono",ui-monospace,Consolas,monospace;
-  font-size:0.87em;background:var(--surface-2);color:var(--ink);
-  padding:1px 6px;border:1px solid var(--rule);white-space:nowrap;
-}
-
-.label{
-  font-family:"Roboto Mono",monospace;font-size:10.5px;font-weight:500;
-  letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-3);
-}
+code{font-family:"Roboto Mono",ui-monospace,Consolas,monospace;font-size:0.87em;
+  background:var(--surface-2);color:var(--ink);padding:1px 6px;border:1px solid var(--rule);white-space:nowrap}
+.label{font-family:"Roboto Mono",monospace;font-size:10.5px;font-weight:500;
+  letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-3)}
 
 header{border-bottom:3px solid var(--accent);padding-bottom:26px;display:flex;flex-direction:column;gap:12px}
 header h1{font-size:clamp(30px,5.5vw,42px)}
 .sub{font-size:17px;color:var(--ink-2);max-width:58ch}
 .facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
-.fact{
-  font-family:"Roboto Mono",monospace;font-size:11.5px;
-  padding:3px 10px;background:var(--accent-soft);color:var(--accent);
-  border:1px solid var(--accent);
-}
+.fact{font-family:"Roboto Mono",monospace;font-size:11.5px;padding:3px 10px;
+  background:var(--accent-soft);color:var(--accent);border:1px solid var(--accent)}
 
-.intro{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:30px}
+.alarm{margin-top:28px;background:var(--stop-soft);border:1px solid var(--stop);border-left-width:4px;padding:18px 22px}
+.alarm h2{font-size:19px;color:var(--stop);margin-bottom:8px}
+.alarm p{color:var(--ink-2);font-size:15px}
+.alarm p + p{margin-top:9px}
+.alarm b{color:var(--ink)}
+
+.intro{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:26px}
 .intro > div{background:var(--surface);padding:18px 20px;display:flex;flex-direction:column;gap:7px}
 .intro h3{font-size:15px}
 .intro ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:5px}
@@ -107,11 +76,8 @@ h2.sec{font-size:14px;letter-spacing:0.1em;text-transform:uppercase;color:var(--
   margin:52px 0 18px;padding-bottom:9px;border-bottom:1px solid var(--rule)}
 
 .step{display:grid;grid-template-columns:58px 1fr;gap:18px;margin-bottom:14px}
-.num{
-  font-family:Archivo,sans-serif;font-size:38px;font-weight:700;line-height:0.95;
-  color:var(--rule-strong);text-align:right;padding-top:14px;
-  font-variant-numeric:tabular-nums;
-}
+.num{font-family:Archivo,sans-serif;font-size:38px;font-weight:700;line-height:0.95;
+  color:var(--rule-strong);text-align:right;padding-top:14px;font-variant-numeric:tabular-nums}
 .body{background:var(--surface);border:1px solid var(--rule);padding:20px 22px}
 .body h3{font-size:19px;color:var(--ink)}
 .body > p{color:var(--ink-2);margin-top:7px}
@@ -126,8 +92,8 @@ h2.sec{font-size:14px;letter-spacing:0.1em;text-transform:uppercase;color:var(--
 .key .label{display:block;margin-bottom:4px;color:var(--accent)}
 .key p{color:var(--ink-2);font-size:14.5px}
 .key p + p{margin-top:7px}
-
-.done{margin-top:14px;padding:11px 15px;background:var(--ok-soft);border-left:3px solid var(--ok);display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.done{margin-top:14px;padding:11px 15px;background:var(--ok-soft);border-left:3px solid var(--ok);
+  display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
 .done .label{color:var(--ok)}
 .done span.v{color:var(--ink);font-size:14.5px;font-weight:600}
 
@@ -138,11 +104,20 @@ h2.sec{font-size:14px;letter-spacing:0.1em;text-transform:uppercase;color:var(--
 .tcard ol{margin:10px 0 0;padding-left:20px;display:flex;flex-direction:column;gap:6px}
 .tcard li{color:var(--ink-2);font-size:14.5px}
 
+.scroll{overflow-x:auto;border:1px solid var(--rule);background:var(--surface);margin-top:6px}
+table{border-collapse:collapse;width:100%;min-width:480px;font-size:14px}
+th,td{padding:10px 15px;text-align:left;border-bottom:1px solid var(--rule);vertical-align:top}
+thead th{font-family:"Roboto Mono",monospace;font-size:10.5px;font-weight:600;
+  letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-3);background:var(--surface-2);white-space:nowrap}
+tbody tr:last-child td{border-bottom:none}
+td:first-child{font-weight:600;color:var(--ink);white-space:nowrap}
+td:last-child{color:var(--ink-2)}
+td.mono{font-family:"Roboto Mono",monospace;color:var(--ink)}
+
 .note{margin-top:30px;padding:18px 20px;background:var(--surface-2);border:1px solid var(--rule)}
 .note h3{font-size:15.5px;margin-bottom:7px}
 .note p{color:var(--ink-2);font-size:14.5px}
 .note p + p{margin-top:8px}
-
 footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--rule);color:var(--ink-3);font-size:13px}
 
 @media (max-width:600px){
@@ -161,27 +136,46 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--rule);color:v
 <header>
   <p class="label">配合江协科技 STM32 入门教程 2023 版</p>
   <h1>STM32 入门环境安装</h1>
-  <p class="sub">把 Keil 装好，能新建工程、选中芯片、把程序烧进板子。做完这些就能跟着教程 P5 开始写代码。全程大约 50 分钟，一半时间在等下载和安装。</p>
+  <p class="sub">把 Keil 装好，能新建工程、选中芯片、编译通过、把程序烧进板子。做完就能跟着教程 P5 开始写代码。全程约 50 分钟，一半时间在等下载和安装。</p>
   <div class="facts">
     <span class="fact">芯片 STM32F103C8T6</span>
     <span class="fact">标准库，非 HAL</span>
+    <span class="fact">MDK 5.36</span>
     <span class="fact">6 步</span>
   </div>
 </header>
+
+<div class="alarm">
+  <h2>先看这条，不然装完编译不过</h2>
+  <p><b>一定要装 MDK 5.36，不要装官网首页的最新版。</b></p>
+  <p>Keil 从 5.37 开始不再自带 Arm Compiler 5，只剩 Arm Compiler 6。而教程用的标准库工程默认就是 AC5 编的。装了新版，前面每一步都顺利，直到 P4 建完工程一按编译，才会冒出一堆看不懂的错，而且报错信息完全指不到根因。</p>
+  <p>这一条是实测的，不是推测。同一个标准库工程、同一份代码，只切换编译器：</p>
+  <div class="scroll" style="margin-top:10px">
+  <table>
+    <thead><tr><th>编译器</th><th>错误</th><th>警告</th><th>能否生成 hex</th></tr></thead>
+    <tbody>
+      <tr><td>Arm Compiler 5</td><td class="mono">0</td><td class="mono">0</td><td>可以</td></tr>
+      <tr><td>Arm Compiler 6</td><td class="mono">446</td><td class="mono">109</td><td>不行</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p style="margin-top:10px">AC6 报的错集中在 <code>core_cm3.h</code>，满屏 <code>unknown type name 'inline'</code>。标准库是 2011 年的代码，AC6 不吃这套写法。而 5.41 里 <code>armcc.exe</code> 根本不存在，想切都切不了。</p>
+</div>
 
 <div class="intro">
   <div class="yes">
     <h3>这个包里已经备好的</h3>
     <ul>
-      <li>Keil 器件包，在 <code>01-器件包</code> 里，双击离线安装，不用联网</li>
-      <li>标准库 <code>STM32F10x_StdPeriph_Lib_V3.5.0</code>，在 <code>02-标准库</code> 里，新建工程要用它</li>
+      <li>器件包 <code>01-器件包</code>，双击离线安装，不用联网</li>
+      <li>标准库 <code>02-标准库</code>，V3.5.0 官方完整版</li>
+      <li>工程模板 <code>03-工程模板</code>，建好的空工程，打开就能编译</li>
       <li>本说明，含出错排查</li>
     </ul>
   </div>
   <div class="no">
     <h3>需要自己下载的</h3>
     <ul>
-      <li>Keil MDK 本体，Arm 官网注册后下载，别人不能代传</li>
+      <li>Keil MDK 5.36 本体，商业软件别人不能代传</li>
       <li>江协科技官方资料包，里面有全部例程、原理图和模块资料</li>
     </ul>
   </div>
@@ -193,16 +187,15 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--rule);color:v
   <div class="num">1</div>
   <div class="body">
     <h3>下载江协科技官方资料包<span class="ep">对应 P3</span></h3>
-    <p>这是跟着教程学的必备资料，全部例程源码、原理图、模块手册都在里面。</p>
+    <p>跟着教程学的必备资料，全部例程源码、原理图、模块手册都在里面。</p>
     <ol>
-      <li>网盘地址 <code>pan.baidu.com/s/1h_UjuQKDX9IpP-U1Effbsw</code></li>
+      <li>网盘 <code>pan.baidu.com/s/1h_UjuQKDX9IpP-U1Effbsw</code></li>
       <li>提取码 <b>dspb</b></li>
       <li>下载后解压，<b>解压密码是 32</b></li>
     </ol>
     <div class="key">
-      <span class="label">找不到或者下不动怎么办</span>
-      <p>官网 <code>jiangxiekeji.com/download.html</code> 有最新链接，链接失效可以发邮件问。</p>
-      <p>如果网盘实在下不下来，本包 <code>02-标准库</code> 里的标准库能让你先把工程建起来，跟着教程走到 P5 没问题。但例程和原理图还是得从官方资料包拿。</p>
+      <span class="label">下不动怎么办</span>
+      <p>官网 <code>jiangxiekeji.com/download.html</code> 有最新链接。实在下不了，本包里的标准库和工程模板够你走到 P5，但例程和原理图还是得从官方资料包拿。</p>
     </div>
   </div>
 </div>
@@ -210,16 +203,24 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--rule);color:v
 <div class="step">
   <div class="num">2</div>
   <div class="body">
-    <h3>安装 Keil MDK</h3>
-    <p>去 Arm 的 Keil 官网下载 MDK 安装包，注册一个免费账号即可下载。</p>
+    <h3>下载并安装 Keil MDK 5.36</h3>
+    <p>注意版本，理由见页面开头那条。</p>
     <ol>
+      <li>下载地址 <code>armkeil.blob.core.windows.net/eval/MDK536.EXE</code>，这是 Arm 官方存储，直接下，不用注册</li>
+      <li>文件约 891 MB</li>
       <li>运行安装程序，一路下一步</li>
-      <li>安装路径填 <code>C:\Keil_v5</code></li>
+      <li>安装路径填 <code>C:\Keil_v5</code>，<b>C 盘空间不足就填 <code>D:\Keil_v5</code></b>，实测装 D 盘完全正常</li>
       <li>中途弹出驱动安装确认框，点安装</li>
     </ol>
     <div class="key">
-      <span class="label">最重要的一条</span>
-      <p>路径里不能有中文、空格，也不要装在下载文件夹或者桌面。装错位置后面会冒出各种莫名其妙的错误，而且很难查。就用 <code>C:\Keil_v5</code>，别改。</p>
+      <span class="label">路径要求</span>
+      <p>路径里不能有中文、空格，不要装在下载文件夹或桌面。装错位置后面会冒出各种莫名其妙的错误，而且很难查。</p>
+      <p>整个安装约占 <b>2.8 GB</b>，先看看盘够不够。</p>
+    </div>
+    <div class="key">
+      <span class="label">装在 D 盘的话，还要多做一步</span>
+      <p>就算你把 Keil 装到了 D 盘，器件包默认仍然往 <code>C:\Users\你的用户名\AppData\Local\Arm\Packs</code> 里塞，光是自带的包就有 <b>1 GB</b>。C 盘紧张的话这一步必须改。</p>
+      <p>改法：用记事本打开 <code>D:\Keil_v5\TOOLS.INI</code>，把第一段里的 <code>RTEPATH="C:\Users\...\Arm\Packs"</code> 改成 <code>RTEPATH="D:\Keil_v5\ARM\PACK"</code>，保存。已经装好的包整个文件夹剪切过去即可。</p>
     </div>
   </div>
 </div>
@@ -231,15 +232,13 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--rule);color:v
     <p>器件包告诉 Keil 有哪些芯片、内存多大、怎么烧写。没有它，新建工程时芯片列表是空的。</p>
     <ol>
       <li>打开本文件夹下的 <code>01-器件包</code></li>
-      <li>双击 <code>ARM.CMSIS.5.9.0.pack</code>，等它装完</li>
-      <li>双击 <code>ARM.CMSIS.6.3.0.pack</code>，两个版本可以共存，都装上更保险</li>
-      <li>双击 <code>Keil.STM32F1xx_DFP.2.4.1.pack</code>，<b>这个是教程用的 F103 系列，必装</b></li>
-      <li>另外两个 F4 和 H5 的包用不到，先不用管</li>
-      <li>全部装完，把 Keil 完全退出再重新打开</li>
+      <li>双击 <code>Keil.STM32F1xx_DFP.2.3.0.pack</code>，等进度窗口自己跑完</li>
+      <li><code>ARM.CMSIS.5.9.0.pack</code> 一般用不上，MDK 自带。装完工程编译报缺 CMSIS 时再双击它</li>
+      <li>装完把 Keil 完全退出再重新打开</li>
     </ol>
     <div class="key">
       <span class="label">不要用 Pack Installer 在线装</span>
-      <p>软件里那个 Pack Installer 要连 Keil 的服务器，国内经常连不上或者下到一半断掉，下坏的文件会让整个器件列表都读不出来。这个包里的文件就是为了绕开这件事。</p>
+      <p>软件里那个 Pack Installer 要连 Keil 的服务器，国内经常连不上或下到一半断掉，下坏的文件会让整个器件列表都读不出来。本包的离线文件就是为了绕开这件事。</p>
     </div>
     <div class="done"><span class="label">做完的标志</span><span class="v">新建工程时能看到 STMicroelectronics 这一项</span></div>
   </div>
@@ -249,16 +248,16 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--rule);color:v
   <div class="num">4</div>
   <div class="body">
     <h3>安装 ST-Link 驱动</h3>
-    <p>教程用的是外置的 ST-Link V2 下载器，就是那个 U 盘模样的小东西。驱动不用另外下载，Keil 自带。</p>
+    <p>教程用的是外置 ST-Link V2 下载器，就是那个 U 盘模样的小东西。驱动不用另外下载，Keil 自带。</p>
     <ol>
-      <li>打开 <code>C:\Keil_v5\ARM\STLink\USBDriver</code></li>
+      <li>打开 <code>C:\Keil_v5\ARM\STLink\USBDriver</code>，装在 D 盘就是 <code>D:\Keil_v5\ARM\STLink\USBDriver</code></li>
       <li>64 位系统运行 <code>dpinst_amd64.exe</code>，32 位运行 <code>dpinst_x86.exe</code></li>
       <li>把 ST-Link V2 插到电脑 USB 口</li>
       <li>右键开始菜单打开设备管理器，看到 <b>STMicroelectronics STLink</b> 就成了</li>
     </ol>
     <div class="key">
       <span class="label">接线</span>
-      <p>ST-Link 和最小系统板之间要接四根杜邦线，一一对应接：<code>SWDIO</code>、<code>SWCLK</code>、<code>GND</code>、<code>3.3V</code>。教程里有接线图，照着接，别接反。</p>
+      <p>ST-Link 和最小系统板之间接四根杜邦线，一一对应：<code>SWDIO</code>、<code>SWCLK</code>、<code>GND</code>、<code>3.3V</code>。教程里有接线图，照着接，别接反。</p>
     </div>
   </div>
 </div>
@@ -267,19 +266,23 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--rule);color:v
   <div class="num">5</div>
   <div class="body">
     <h3>新建工程<span class="ep">对应 P4</span></h3>
-    <p>这一步跟着教程视频做，下面只说环境相关的关键点和最容易卡住的地方。</p>
+    <p>跟着教程视频做。下面只说环境相关的关键点和最容易卡住的地方。</p>
     <ol>
       <li>菜单 <code>Project</code> → <code>New µVision Project</code></li>
       <li>存到<b>纯英文路径</b>，比如 <code>D:\stm32\Project01</code>，文件夹名和工程名都别用中文</li>
       <li>弹出 Select Device 窗口，展开 <code>STMicroelectronics</code> → <code>STM32F1 Series</code>，一层层点到 <b>STM32F103C8</b>，点中它</li>
       <li>下一个窗口 Manage Run-Time Environment 直接点 Cancel，教程用标准库，不用这里的组件</li>
-      <li>按教程把标准库文件复制进工程，库在本包 <code>02-标准库</code> 里，或者用官方资料包里那份，两者一样</li>
+      <li>按教程把标准库文件复制进工程，库在本包 <code>02-标准库</code> 里</li>
       <li>按教程添加分组、添加头文件路径</li>
       <li><b>定义宏</b> <code>USE_STDPERIPH_DRIVER</code>，位置在魔术棒图标 → C/C++ 标签 → Define 输入框</li>
     </ol>
     <div class="key">
       <span class="label">别被 unknown 吓到</span>
       <p>Select Device 窗口刚打开时，上面 Vendor、Device、Toolset 三行都显示 unknown。这是正常的，因为还没选芯片。在下面树里点中一个具体型号，三行会立刻自动填好。</p>
+    </div>
+    <div class="key">
+      <span class="label">建不出来可以用现成的</span>
+      <p>本包 <code>03-工程模板</code> 里有一个建好的工程，标准库、宏、头文件路径全配好了，复制到纯英文路径打开就能编译。建议还是自己照 P4 建一遍，模板留作对照和兜底。</p>
     </div>
     <div class="done"><span class="label">做完的标志</span><span class="v">编译通过，0 Error 0 Warning</span></div>
   </div>
@@ -292,9 +295,9 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--rule);color:v
     <ol>
       <li>点工具栏的<b>魔术棒</b>图标，打开工程设置</li>
       <li>进 <code>Debug</code> 标签，右上角下拉框选 <b>ST-Link Debugger</b></li>
-      <li>点旁边的 <code>Settings</code>，如果右边能读出一串 SW Device 编号，说明板子连上了</li>
-      <li>进 <code>Flash Download</code> 标签，勾上 <b>Reset and Run</b>，这样烧完自动运行，不用手动按复位</li>
-      <li>回到主界面，点下载按钮，看到 Verify OK 就成功了</li>
+      <li>点旁边的 <code>Settings</code>，右边能读出一串 SW Device 编号就说明板子连上了</li>
+      <li>进 <code>Flash Download</code> 标签，勾上 <b>Reset and Run</b>，烧完自动运行，不用手动按复位</li>
+      <li>回主界面点下载按钮，看到 Verify OK 就成功了</li>
     </ol>
     <div class="done"><span class="label">全部完成</span><span class="v">可以开始 P5 GPIO 输出了</span></div>
   </div>
@@ -305,37 +308,37 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--rule);color:v
 <div class="trouble">
 
   <div class="tcard">
+    <h3>编译报一大堆错，说找不到头文件或者符号未定义</h3>
+    <p>新建工程最常见的三个疏漏，按顺序查：</p>
+    <ol>
+      <li><b>装了 5.37 以上的 Keil。</b>没有 AC5，标准库工程编不过。卸掉换 5.36</li>
+      <li><b>宏没定义。</b>魔术棒 → C/C++ 标签 → Define 框里必须填 <code>USE_STDPERIPH_DRIVER</code>。少了它标准库头文件全部不生效，会报几十上百个错</li>
+      <li><b>头文件路径没加。</b>同一个标签里 Include Paths 要把工程中每个放了 <code>.h</code> 的文件夹都加进去，一个都不能漏</li>
+    </ol>
+  </div>
+
+  <div class="tcard">
     <h3>芯片列表是空的，只有一项 ARM</h3>
     <p>器件包没装上，或者被删掉了。</p>
     <ol>
-      <li>回到第 3 步，双击 <code>.pack</code> 文件离线安装</li>
+      <li>回第 3 步，双击 <code>.pack</code> 文件离线安装</li>
       <li>装完必须完全退出 Keil 再重开，否则列表不刷新</li>
     </ol>
   </div>
 
   <div class="tcard">
     <h3>Pack Installer 顶上出现红色 ERRORS，写着 Cannot load PDSC Files</h3>
-    <p>在线目录缓存下坏了。那些是从网上下的芯片索引文件，下载中断或者被网络拦截，存下来就是坏的。</p>
+    <p>在线目录缓存下坏了。那些是从网上下的芯片索引文件，下载中断或被网络拦截，存下来就是坏的。</p>
     <ol>
       <li>完全关掉 Keil 和 Pack Installer</li>
-      <li>打开 <code>C:\Keil_v5\ARM\PACK\.Web</code>，把里面的文件全部删掉。这个文件夹只是缓存，删了不影响已装的东西</li>
+      <li>打开 <code>C:\Keil_v5\ARM\PACK\.Web</code>，把里面文件全删。这个文件夹只是缓存，删了不影响已装的东西</li>
       <li>重开 Keil，改用第 3 步的离线方式装包</li>
     </ol>
-    <p>那个 ERRORS 下面的 Del 按钮删的是坏缓存，点了是安全的。但 Packs 标签页里已经装好的器件包千万别删。</p>
+    <p>ERRORS 下面的 Del 按钮删的是坏缓存，点了安全。但 Packs 标签页里已装好的器件包千万别删。</p>
   </div>
 
   <div class="tcard">
-    <h3>编译报一大堆错，说找不到头文件或者符号未定义</h3>
-    <p>新建工程最常见的两个疏漏，按顺序查：</p>
-    <ol>
-      <li><b>宏没定义。</b>魔术棒 → C/C++ 标签 → Define 框里必须填 <code>USE_STDPERIPH_DRIVER</code>。少了它标准库的头文件全部不生效，会报几十上百个错</li>
-      <li><b>头文件路径没加。</b>同一个 C/C++ 标签里，Include Paths 要把工程中每个放了 <code>.h</code> 的文件夹都加进去，一个都不能漏</li>
-      <li>路径里有中文或空格，也会导致找不到文件，工程要放纯英文路径</li>
-    </ol>
-  </div>
-
-  <div class="tcard">
-    <h3>点下载报错，找不到 ST-Link 或者 No target connected</h3>
+    <h3>点下载报错，找不到 ST-Link 或 No target connected</h3>
     <ol>
       <li>确认驱动装了，见第 4 步</li>
       <li>确认四根杜邦线接对：SWDIO、SWCLK、GND、3.3V，接反了读不到芯片</li>
@@ -346,9 +349,24 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--rule);color:v
 
   <div class="tcard">
     <h3>编译报错说超过 32K 限制</h3>
-    <p>MDK-Lite 免费版的容量上限。跟着教程学到后面才会撞上，遇到了再去 Arm 官网申请 MDK Community Edition，非商业用途免费，装上就没有限制。申请完在 Keil 里点 <code>File</code> → <code>License Management</code> 填授权码。</p>
+    <p>MDK-Lite 免费版的容量上限，学到后面才会撞上。遇到了去 Arm 官网申请 MDK Community Edition，非商业用途免费，没有这个限制。申请完在 Keil 里点 <code>File</code> → <code>License Management</code> 填授权码。</p>
   </div>
 
+</div>
+
+<h2 class="sec">这套环境的版本</h2>
+<div class="scroll">
+<table>
+  <thead><tr><th>组件</th><th>版本</th><th>说明</th></tr></thead>
+  <tbody>
+    <tr><td>Keil MDK</td><td class="mono">5.36</td><td>最后一个自带 Arm Compiler 5 的版本</td></tr>
+    <tr><td>Arm Compiler 5</td><td class="mono">5.06 update 7</td><td>教程的标准库工程默认用这个</td></tr>
+    <tr><td>Arm Compiler 6</td><td class="mono">6.16</td><td>5.36 同时也带，但教程用不到</td></tr>
+    <tr><td>器件包</td><td class="mono">STM32F1xx_DFP 2.3.0</td><td>含 29 个 F103 型号，含 C8T6</td></tr>
+    <tr><td>标准库</td><td class="mono">StdPeriph V3.5.0</td><td>ST 官方版，非 HAL 库</td></tr>
+    <tr><td>芯片</td><td class="mono">STM32F103C8T6</td><td>64 KB Flash，20 KB RAM</td></tr>
+  </tbody>
+</table>
 </div>
 
 <div class="note">
@@ -357,7 +375,14 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--rule);color:v
   <p>它用的是<b>标准库</b>不是 HAL 库。这两套是不同的写法，网上搜到的代码如果是 HAL 的，直接抄进来编译不过。搜资料时注意区分。</p>
 </div>
 
-<footer>器件包来自 Keil 官方源，标准库为 ST 官方 V3.5.0 版，均已校验完整。卡在哪一步，把那一步的截图发回来。</footer>
+<div class="note">
+  <h3>这套环境验证到什么程度</h3>
+  <p>整套流程在一台 Windows 11 上从零走了一遍：装 MDK 5.36 到 D 盘、离线装器件包、把包目录迁到 D 盘、用本包的工程模板编译。</p>
+  <p>结果是 <b>0 错误 0 警告</b>，生成 hex 3283 字节，程序体积 <code>Code=896 RO-data=252 ZI-data=1024</code>，标准库 23 个外设驱动全部编过。</p>
+  <p>没验证的只有一项：烧录到真板子。手上没有 F103 板子和 ST-Link，第 4 步和第 6 步是照官方文档写的，你插上板子实际试一次就知道。</p>
+</div>
+
+<footer>本页所有版本号、路径、报错信息都来自实际操作，不是照搬网上教程。卡在哪一步，把那一步的截图发回来。</footer>
 
 </div>
 </body>
