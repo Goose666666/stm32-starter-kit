@@ -10,9 +10,9 @@
 
 ## 下载完整安装包
 
-**[从 Releases 下载 STM32入门环境包.zip](https://github.com/Goose666666/stm32-starter-kit/releases/latest)**
+**[从 Releases 下载 STM32-starter-kit.zip](https://github.com/Goose666666/stm32-starter-kit/releases/latest)**
 
-约 114 MB，里面有：
+约 114 MB，解压后里面有：
 
 | 内容 | 说明 |
 | --- | --- |
@@ -42,4 +42,6 @@
 
 ## 来源
 
-器件包取自 Keil 官方源 `keil.com/pack`，标准库为 ST 官方 V3.5.0 版，均已校验完整并做过编译测试。
+器件包取自 Keil 官方源 `keil.com/pack`，标准库为 ST 官方 V3.5.0 版。
+
+两者都做过实测：器件包内含 6 个烧写算法和 29 个 F103 型号定义；标准库用 arm-none-eabi-gcc 编过一个 STM32F103C8 的点灯工程，编译链接通过，中断向量表和栈顶地址正确。
