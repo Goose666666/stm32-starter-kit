@@ -181,6 +181,70 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--rule);color:v
   </div>
 </div>
 
+<h2 class="sec">装过旧版的先清理</h2>
+
+<div class="tcard" style="border-left-color:var(--stop)">
+  <h3 style="color:var(--stop)">没装过 Keil 的，跳过这一节，直接看下面的安装步骤</h3>
+  <p>已经装过一次没成功的，必须先清干净。旧版留在机器上会和新装的打架，最典型的症状就是芯片列表空、或者编译时用错编译器。</p>
+</div>
+
+<div class="step">
+  <div class="num">A</div>
+  <div class="body">
+    <h3>卸载旧的 Keil</h3>
+    <ol>
+      <li>找到旧 Keil 的安装文件夹，里面有个 <code>Uninstall.exe</code>，双击它</li>
+      <li>弹出的窗口里有一个列表，写着 <b>Keil ARM Development Tools</b>，<b>先用鼠标点中这一行</b>，右边 Remove 按钮才会变成可点</li>
+      <li>点 <code>Remove</code></li>
+      <li>会问你是不是要删掉某个文件夹里的所有文件，点 <b>是</b></li>
+      <li>等列表变空，点 <code>Close</code></li>
+    </ol>
+    <div class="key">
+      <span class="label">找不到 Uninstall.exe 就走控制面板</span>
+      <p>设置里搜「应用」，在已安装的应用列表里找 <b>Keil μVision4</b>，卸载它。名字里写 4 是正常的，MDK5 就是这么显示的。</p>
+    </div>
+  </div>
+</div>
+
+<div class="step">
+  <div class="num">B</div>
+  <div class="body">
+    <h3>删掉残留文件夹</h3>
+    <p>卸载程序不会删干净，会剩下几个文件。</p>
+    <ol>
+      <li>回到旧 Keil 的安装文件夹，<b>整个文件夹直接删掉</b></li>
+      <li>如果提示有文件正被占用，先把 Keil 和 Pack Installer 全部关掉，任务管理器里确认没有 <code>UV4.exe</code></li>
+    </ol>
+  </div>
+</div>
+
+<div class="step">
+  <div class="num">C</div>
+  <div class="body">
+    <h3>删掉器件包文件夹，这一步最关键</h3>
+    <p>之前那个 <b>Cannot load PDSC Files</b> 报错，坏文件就在这里。不删掉，装了新版还会接着报同样的错。</p>
+    <p>器件包可能在两个地方，<b>两个都要看</b>：</p>
+    <ol>
+      <li>旧 Keil 安装文件夹里的 <code>ARM\PACK</code>。跟着上一步删文件夹就一起没了</li>
+      <li>用户目录下的 <code>C:\Users\你的用户名\AppData\Local\Arm\Packs</code>，<b>这个位置容易漏</b></li>
+    </ol>
+    <div class="key">
+      <span class="label">怎么快速打开第二个位置</span>
+      <p>按 <code>Win + R</code>，输入 <code>%LOCALAPPDATA%\Arm</code> 回车，看到 <code>Packs</code> 文件夹就把整个 <code>Arm</code> 文件夹删掉。</p>
+      <p>这个文件夹可能有 1 GB 左右，删了不心疼，新装的会重新生成。</p>
+    </div>
+  </div>
+</div>
+
+<div class="step">
+  <div class="num">D</div>
+  <div class="body">
+    <h3>重启电脑</h3>
+    <p>不是走过场。卸载会动到 USB 驱动，不重启的话新装的驱动可能不生效，插上下载器认不出来。</p>
+    <div class="done"><span class="label">清理完成</span><span class="v">可以按下面的步骤装 5.36 了</span></div>
+  </div>
+</div>
+
 <h2 class="sec">安装步骤</h2>
 
 <div class="step">
