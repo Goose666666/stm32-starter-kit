@@ -14,9 +14,16 @@
 
 ## 下载完整安装包
 
-**[从 Releases 下载 STM32-starter-kit.zip](https://github.com/Goose666666/stm32-starter-kit/releases/latest)**
+**[去 Releases 页下载](https://github.com/Goose666666/stm32-starter-kit/releases/latest)**
 
-约 69 MB，解压后里面有：
+那里有两个文件，都要下：
+
+| 文件 | 大小 | 是什么 |
+| --- | --- | --- |
+| `MDK536.EXE` | 891 MB | Keil MDK 5.36 安装程序，先装这个 |
+| `STM32-starter-kit.zip` | 69 MB | 器件包、标准库、工程模板、图文说明 |
+
+`STM32-starter-kit.zip` 解压后里面有：
 
 | 内容 | 说明 |
 | --- | --- |
@@ -26,9 +33,7 @@
 | `安装说明.html` | 完整步骤，双击用浏览器打开 |
 | `README.txt` | 纯文本速查版 |
 
-## 这个包里没有什么
-
-**Keil MDK 本体。**它是 Arm 的商业软件，需要自己去官网注册账号后下载。
+## 还要自己下的一样
 
 **江协科技官方资料包。**里面有全部例程、原理图和模块手册。
 
