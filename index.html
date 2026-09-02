@@ -160,6 +160,7 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--rule);color:v
   </table>
   </div>
   <p style="margin-top:10px">AC6 报的错集中在 <code>core_cm3.h</code>，满屏 <code>unknown type name 'inline'</code>。标准库是 2011 年的代码，AC6 不吃这套写法。而 5.41 里 <code>armcc.exe</code> 根本不存在，想切都切不了。</p>
+  <p style="margin-top:10px"><b>官方资料也证实了这一点。</b>江协科技资料包里 78 个例程工程，编译器设置全部是 Arm Compiler 5，没有一个例外。</p>
 </div>
 
 <div class="intro">
@@ -345,7 +346,9 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--rule);color:v
     </div>
     <div class="key">
       <span class="label">建不出来可以用现成的</span>
-      <p>本包 <code>03-工程模板</code> 里有一个建好的工程，标准库、宏、头文件路径全配好了，复制到纯英文路径打开就能编译。建议还是自己照 P4 建一遍，模板留作对照和兜底。</p>
+      <p>本包 <code>03-工程模板</code> 里有一个建好的工程，标准库、宏、头文件路径全配好了，复制到纯英文路径打开就能编译。</p>
+      <p>官方资料包里也有一个，在 <code>程序源码\STM32Project-有注释版\2-1 STM32工程模板</code>，那个才是教程 P4 做出来的成品，更值得对照。本包里这个是拿不到官方资料时的兜底。</p>
+      <p>不管用哪个，都建议先自己照 P4 建一遍，建不出来再看模板。</p>
     </div>
     <div class="done"><span class="label">做完的标志</span><span class="v">编译通过，0 Error 0 Warning</span></div>
   </div>
@@ -425,7 +428,7 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--rule);color:v
     <tr><td>Keil MDK</td><td class="mono">5.36</td><td>最后一个自带 Arm Compiler 5 的版本</td></tr>
     <tr><td>Arm Compiler 5</td><td class="mono">5.06 update 7</td><td>教程的标准库工程默认用这个</td></tr>
     <tr><td>Arm Compiler 6</td><td class="mono">6.16</td><td>5.36 同时也带，但教程用不到</td></tr>
-    <tr><td>器件包</td><td class="mono">STM32F1xx_DFP 2.3.0</td><td>含 29 个 F103 型号，含 C8T6</td></tr>
+    <tr><td>器件包</td><td class="mono">STM32F1xx_DFP 2.3.0</td><td>官方例程声明 2.2.0，实测 2.3.0 通用</td></tr>
     <tr><td>标准库</td><td class="mono">StdPeriph V3.5.0</td><td>ST 官方版，非 HAL 库</td></tr>
     <tr><td>芯片</td><td class="mono">STM32F103C8T6</td><td>64 KB Flash，20 KB RAM</td></tr>
   </tbody>
@@ -442,6 +445,8 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--rule);color:v
   <h3>这套环境验证到什么程度</h3>
   <p>整套流程在一台 Windows 11 上从零走了一遍：装 MDK 5.36 到 D 盘、离线装器件包、把包目录迁到 D 盘、用本包的工程模板编译。</p>
   <p>结果是 <b>0 错误 0 警告</b>，生成 hex 3283 字节，程序体积 <code>Code=896 RO-data=252 ZI-data=1024</code>，标准库 23 个外设驱动全部编过。</p>
+  <p>还拿江协科技官方资料包里的真实例程试了一遍，<b>7 个全部 0 错误 0 警告</b>，覆盖 GPIO、按键、外部中断、定时器、串口、I2C。所以这套环境能直接跑教程的例程，不只是能跑我自己写的模板。</p>
+  <p>顺带核对到一处版本差异：官方例程声明的器件包是 <code>2.2.0</code>，本包给的是 <code>2.3.0</code>。实测能正常打开编译，不用管。</p>
   <p>没验证的只有一项：烧录到真板子。手上没有 F103 板子和 ST-Link，第 4 步和第 6 步是照官方文档写的，你插上板子实际试一次就知道。</p>
 </div>
 
