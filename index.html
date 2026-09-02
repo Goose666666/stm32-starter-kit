@@ -441,6 +441,29 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--rule);color:v
   <p>它用的是<b>标准库</b>不是 HAL 库。这两套是不同的写法，网上搜到的代码如果是 HAL 的，直接抄进来编译不过。搜资料时注意区分。</p>
 </div>
 
+<h2 class="sec">卡住了先跑诊断</h2>
+
+<div class="step">
+  <div class="num">!</div>
+  <div class="body">
+    <h3>一键环境体检</h3>
+    <p>本包 <code>04-诊断工具</code> 里有个 <code>双击运行诊断.bat</code>，双击跑一到两分钟，同目录会生成 <code>诊断结果.txt</code>。</p>
+    <ol>
+      <li>Keil 装在哪、什么版本、<b>有没有 Arm Compiler 5</b></li>
+      <li>器件包装了没有、在线缓存里有没有下坏的文件</li>
+      <li>ST-Link 插上没有、驱动状态</li>
+      <li>直接编译一次工程，报体积和错误数</li>
+      <li>直接试烧一次，捕获报错原文</li>
+    </ol>
+    <div class="key">
+      <span class="label">比截图好用</span>
+      <p>报错是原文不是图片，一次把所有环节查完。文件末尾还附了一份「环境正常时应该是什么样」，自己对一下就知道差在哪。</p>
+      <p>没插板子时第 5 项会等 90 秒才超时，这是正常的。</p>
+    </div>
+    <div class="done"><span class="label">卡住了</span><span class="v">先跑它，再把 诊断结果.txt 发给能帮你的人</span></div>
+  </div>
+</div>
+
 <div class="note">
   <h3>这套环境验证到什么程度</h3>
   <p>整套流程在一台 Windows 11 上从零走了一遍：装 MDK 5.36 到 D 盘、离线装器件包、把包目录迁到 D 盘、用本包的工程模板编译。</p>
