@@ -8,7 +8,35 @@ function BAD($what, $how) {
     W ("  !! " + $what)
     if ($how) { W ("     怎么办：" + $how) }
 }
-function KillUV4 { Get-Process UV4 -EA SilentlyContinue | Stop-Process -Force; Start-Sleep -Milliseconds 800 }
+$script:mayKill = $true
+function KillUV4 {
+    if (-not $script:mayKill) { return }
+    Get-Process UV4 -EA SilentlyContinue | Stop-Process -Force
+    Start-Sleep -Milliseconds 800
+}
+
+# Keil 是单实例程序，命令行编译要求它没在运行。开跑前先征得同意，别把没保存的代码弄丢
+$script:closedKeil = $false
+if (Get-Process UV4 -EA SilentlyContinue) {
+    Write-Host ""
+    Write-Host "  检测到 Keil 正在运行" -ForegroundColor Yellow
+    Write-Host ""
+    Write-Host "  要测编译和烧录，必须先关掉 Keil，否则测不了。"
+    Write-Host "  请先切到 Keil 按 Ctrl+S 保存你的代码。"
+    Write-Host ""
+    Write-Host "  保存好了就直接按回车，脚本会关掉 Keil 再继续。"
+    Write-Host "  不想关的话，输入 N 再按回车，跳过编译和烧录这两项检查。"
+    Write-Host ""
+    $ans = Read-Host "  按回车继续，或输入 N 跳过"
+    if ($ans -match '^\s*[Nn]') {
+        $script:mayKill = $false
+        Write-Host "  好，保留 Keil 不动，跳过编译和烧录测试" -ForegroundColor Yellow
+    } else {
+        $script:closedKeil = $true
+        Write-Host "  正在关闭 Keil" -ForegroundColor Yellow
+    }
+    Write-Host ""
+}
 
 KillUV4
 
@@ -105,7 +133,8 @@ W ""
 
 W "== 4. 编译测试 =="
 $buildOK = $false
-if (-not $prj)      { BAD "找不到任何 Keil 工程" "把这个「诊断工具」文件夹整个复制到你的工程目录里，再双击运行一次" }
+if (-not $script:mayKill) { W "  你选了保留 Keil 不关，这项跳过" }
+elseif (-not $prj)  { BAD "找不到任何 Keil 工程" "把这个「诊断工具」文件夹整个复制到你的工程目录里，再双击运行一次" }
 elseif (-not $keil) { W "  Keil 没装，跳过" }
 else {
     $uv = "$root\UV4\UV4.exe"
@@ -127,7 +156,8 @@ W ""
 
 W "== 5. 烧录测试 =="
 $flashOK = $false
-if (-not $prj -or -not $keil) { W "  没工程或 Keil 没装，跳过" }
+if (-not $script:mayKill) { W "  你选了保留 Keil 不关，这项跳过" }
+elseif (-not $prj -or -not $keil) { W "  没工程或 Keil 没装，跳过" }
 elseif (-not $hasStlink) {
     W "  ST-Link 不是 OK 状态，跳过烧录测试"
     W "  把下载器和板子都接好、保持连接，再跑一次这个脚本才能测烧录"
@@ -277,5 +307,9 @@ Write-Host ""
 if ($issues.Count -eq 0) { Write-Host "没查出问题，详见文件开头的结论" -ForegroundColor Green }
 else { Write-Host ("发现 " + $issues.Count + " 处问题，打开文件看开头的结论，一条条解决") -ForegroundColor Yellow }
 Write-Host ("结果已保存到: " + $out) -ForegroundColor Green
+if ($script:closedKeil) {
+    Write-Host ""
+    Write-Host "刚才为了测编译，脚本把 Keil 关掉了，现在可以重新打开继续用" -ForegroundColor Yellow
+}
 Write-Host "按回车键关闭" -ForegroundColor Yellow
 [void](Read-Host)
