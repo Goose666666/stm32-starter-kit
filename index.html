@@ -404,6 +404,18 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--rule);color:v
   </div>
 
   <div class="tcard">
+    <h3>程序烧进去了，但灯不亮或者时亮时不亮</h3>
+    <p>先查供电。<b>同一时刻只能有一路电源。</b></p>
+    <p>最常见的错法是板子自己插着 USB，同时 ST-Link 的 3.3V 线也接着。两路电源打架，芯片供电不稳，程序根本跑不起来，表现就是烧录显示成功但没反应。</p>
+    <ol>
+      <li><b>推荐接法：ST-Link 只接三根线</b>，<code>SWDIO</code>、<code>SWCLK</code>、<code>GND</code>，<b>不要接 3.3V</b>。板子用它自己的 USB 口供电</li>
+      <li>只有板子没有其他供电时，才接那根 3.3V 线</li>
+      <li>ST-Link V2 的 3.3V 脚供电能力很弱，有些山寨版上它是电压检测脚不是供电脚，带不动板子</li>
+    </ol>
+    <p>判断办法：拔掉 ST-Link 的 3.3V 线，如果灯就正常了，那就是这个原因。</p>
+  </div>
+
+  <div class="tcard">
     <h3>点下载报错，找不到 ST-Link 或 No target connected</h3>
     <ol>
       <li>确认驱动装了，见第 4 步</li>
